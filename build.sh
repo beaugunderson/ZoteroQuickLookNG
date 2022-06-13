@@ -1,3 +1,3 @@
 #!/bin/bash
 
-zip -r builds/zoteroquicklook.xpi chrome defaults install.rdf chrome.manifest -x .*
+zip -r builds/ZoteroQuickLookNG.xpi chrome defaults install.rdf chrome.manifest -x .*
