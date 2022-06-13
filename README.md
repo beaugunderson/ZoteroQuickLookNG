@@ -5,8 +5,10 @@ This open source project implements QuickLook in Zotero.
 
 # History
 
-This is a fork of the excellent work done by @mronkko, @bwiernik, and others on
-ZoteroQuickLook.
+This is a fork of the excellent work done by
+[@mronkko](https://github.com/mronkko),
+[@bwiernik](https://github.com/bwiernik), and others on
+[ZoteroQuickLook](https://github.com/mronkko/ZoteroQuickLook).
 
 I only use Zotero on macOS so support for Windows and Linux has been removed.
   If there is demand I can add it back or help interested parties open a Pull
