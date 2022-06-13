@@ -91,6 +91,7 @@ Zotero.ZoteroQuickLook = {
 
       let isLinkedFile = !item.isImportedAttachment();
       let path = item.getFilePath();
+
       if (!path) {
         ZoteroPane_Local.showAttachmentNotFoundDialog(item.id, path, {
           noLocate: true,
@@ -99,6 +100,7 @@ Zotero.ZoteroQuickLook = {
         });
         return;
       }
+
       let fileExists = await OS.File.exists(path);
 
       // If the file is an evicted iCloud Drive file, launch that to trigger a download.
@@ -114,7 +116,9 @@ Zotero.ZoteroQuickLook = {
         if (await OS.File.exists(iCloudPath)) {
           // Launching qlmanage should trigger an iCloud download
           Zotero.debug("ZoteroQuickLook: Triggering download of iCloud file");
+
           await args.push(Zotero.ZoteroQuickLook.cleanFileName(path));
+
           return;
         }
       }
@@ -133,6 +137,7 @@ Zotero.ZoteroQuickLook = {
           notOnServer: false,
           linkedFile: isLinkedFile,
         });
+
         return;
       }
 
@@ -178,6 +183,7 @@ Zotero.ZoteroQuickLook = {
       var foStream = Components.classes[
         "@mozilla.org/network/file-output-stream;1"
       ].createInstance(Components.interfaces.nsIFileOutputStream);
+
       // use 0x02 | 0x10 to open file for appending.
       foStream.init(file, 0x02 | 0x08 | 0x20, 0666, 0);
       // write, create, truncate
@@ -220,8 +226,8 @@ Zotero.ZoteroQuickLook = {
         filesFound = true;
       }
 
-      //See if it has children and add them. Best attachment comes first.
-      //Notes come after attachments
+      // See if it has children and add them. Best attachment comes first.
+      // Notes come after attachments
       else {
         var attachments = items[item].getAttachments(false);
         var notes = items[item].getNotes(false);
@@ -305,7 +311,6 @@ Zotero.ZoteroQuickLook = {
     var key = String.fromCharCode(event.which);
 
     if (
-      (key == "q" && !(event.ctrlKey || event.altKey || event.metaKey)) ||
       (key == " " && !(event.ctrlKey || event.altKey || event.metaKey)) ||
       (key == "y" && event.metaKey && !(event.ctrlKey || event.altKey))
     ) {
