@@ -43,12 +43,6 @@ Zotero.ZoteroQuickLook = {
   },
 
   cleanFileName: function (filename) {
-    //TODO is this still needed?
-    //This is a workaround for firefox bug. See https://www.zotero.org/trac/ticket/957
-    //The workaround can be disabled with a hidden preference.
-    if (this.getPref("usefilenameworkaround")) {
-      filename = filename.replace(/[^A-Z0-9.:\/\\_\- ]/gi, "*");
-    }
     return filename;
   },
 
