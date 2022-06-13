@@ -1,9 +1,19 @@
-Zotero.debug("ZoteroQuickLookQuickFormat loading",3);
+Zotero.debug("ZoteroQuickLookQuickFormat loading", 3);
 
-Components.classes["@mozilla.org/moz/jssubscript-loader;1"].getService(Components.interfaces.mozIJSSubScriptLoader).loadSubScript("chrome://zoteroquicklook/content/zoteroquicklookquickformat.js");
+Components.classes["@mozilla.org/moz/jssubscript-loader;1"]
+  .getService(Components.interfaces.mozIJSSubScriptLoader)
+  .loadSubScript(
+    "chrome://zoteroquicklook/content/zoteroquicklookquickformat.js"
+  );
 
+window.addEventListener(
+  "load",
 
-window.addEventListener('load', function(e) { Zotero.ZoteroQuickLookQuickFormat.init(); }, false);
-	
-Zotero.debug("ZoteroQuickLookQuickFormat loaded",3);
+  function (e) {
+    Zotero.ZoteroQuickLookQuickFormat.init();
+  },
 
+  false
+);
+
+Zotero.debug("ZoteroQuickLookQuickFormat loaded", 3);
